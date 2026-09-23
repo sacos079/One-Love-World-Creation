@@ -1,0 +1,69 @@
+:root {
+  --color-brand-blue: #9fdcff;
+  --color-brand-green: #c5f6c7;
+  --color-brand-orange: #ffbe7a;
+  --color-brand-lavender: #f2ebff;
+  --color-brand-white: #ffffff;
+  --color-brand-midnight: #24154f;
+  --color-brand-ink: #352a5d;
+  --color-brand-muted: #6e6790;
+  --color-brand-line: #d9d2ee;
+  --color-brand-surface: #fffdfb;
+  --color-brand-surface-alt: #f7f3ff;
+  --color-brand-success: #0f8a54;
+
+  --font-body:
+    "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-display:
+    "Avenir Next", "Inter", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --container-sm: 40rem;
+  --container-md: 48rem;
+  --container-lg: 72rem;
+  --container-xl: 80rem;
+
+  --radius-sm: 0.75rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 1.75rem;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 22px 44px rgba(36, 21, 79, 0.08);
+  --shadow-soft: 0 12px 30px rgba(36, 21, 79, 0.06);
+
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+
+  --spacing-section-y: clamp(4rem, 7vw, 7rem);
+}
+
+@theme inline {
+  --color-background: var(--color-brand-surface);
+  --color-foreground: var(--color-brand-ink);
+  --color-brand-blue: var(--color-brand-blue);
+  --color-brand-green: var(--color-brand-green);
+  --color-brand-orange: var(--color-brand-orange);
+  --color-brand-lavender: var(--color-brand-lavender);
+  --color-brand-white: var(--color-brand-white);
+  --color-brand-midnight: var(--color-brand-midnight);
+  --color-brand-ink: var(--color-brand-ink);
+  --color-brand-muted: var(--color-brand-muted);
+  --color-brand-line: var(--color-brand-line);
+  --color-brand-surface: var(--color-brand-surface);
+  --color-brand-surface-alt: var(--color-brand-surface-alt);
+  --color-brand-success: var(--color-brand-success);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-pill: var(--radius-pill);
+
+  --shadow-card: var(--shadow-card);
+  --shadow-soft: var(--shadow-soft);
+
+  --breakpoint-xs: 30rem;
+}

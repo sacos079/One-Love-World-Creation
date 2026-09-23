@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@import "../styles/theme.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-brand-surface);
+  color: var(--color-brand-ink);
+  font-family: var(--font-body), sans-serif;
+}
+
+::selection {
+  background: var(--color-brand-blue);
+  color: var(--color-brand-midnight);
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  transition:
+    color var(--duration-fast) ease,
+    background-color var(--duration-fast) ease,
+    border-color var(--duration-fast) ease,
+    transform var(--duration-fast) ease;
+}
+
+input,
+select,
+textarea {
+  background: var(--color-brand-white);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--color-brand-midnight);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
