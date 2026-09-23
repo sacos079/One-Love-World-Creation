@@ -31,17 +31,11 @@ Then open http://localhost:8000. Links use root paths (`/css/...`), so opening t
 
 Connect this repo in Cloudflare Pages. Framework preset: **None**, build command: *(empty)*, output directory: `/`.
 
-## Connecting the order form (Tally → Airtable)
+## Connecting the order forms (Tally → Airtable)
 
-1. Build the "Start Your Order" form in Tally using the fields in the spec (section 5).
-2. In Tally: **Integrations → Airtable**, map each field to the Orders table columns (spec section 8).
-   Add hidden fields for the system columns: `Order Status` = `Inquiry`. Order Date can map to Tally's submission time.
-3. Set the confirmation message: "Got it! We'll review your idea and send you a design preview and quote. Nothing is final until you approve it."
-4. Copy the form ID from its share link (`tally.so/r/<ID>`) and paste it into `data-tally-id=""` in `start-an-order/index.html`.
+Full step-by-step guide: [`docs/tally-setup.md`](docs/tally-setup.md). It covers every question, the exact dropdown options, the Airtable column mapping, and the hidden fields.
 
-Do the same for the "Plan Your Crew Order" form in `group-orders/index.html`. Point it at the same Orders table and also map Group/Organization Name.
-
-Until an ID is set, each page shows an outline of the questions instead of the form.
+Short version: build both forms in Tally, connect them to the **Orders** table, then paste each form ID into `data-tally-id=""` in `start-an-order/index.html` and `group-orders/index.html`. Until an ID is set, each page shows an outline of the questions instead of the form.
 
 ## Before launch
 

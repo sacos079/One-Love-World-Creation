@@ -27,13 +27,16 @@
   embeds.forEach(function (el) {
     var id = (el.getAttribute("data-tally-id") || "").trim();
     if (!id) return;
+    // Hidden-field values Tally passes to Airtable (Status, Intake Source, Request Type).
+    var hidden = (el.getAttribute("data-tally-hidden") || "").trim();
     var iframe = document.createElement("iframe");
     iframe.className = "tally-frame";
     iframe.title = el.getAttribute("data-title") || "Order form";
     iframe.loading = "lazy";
     iframe.setAttribute("data-tally-src",
       "https://tally.so/embed/" + encodeURIComponent(id) +
-      "?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1");
+      "?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" +
+      (hidden ? "&" + hidden : ""));
     el.innerHTML = "";
     el.appendChild(iframe);
     live.push(iframe);
