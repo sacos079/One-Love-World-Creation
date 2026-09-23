@@ -8,8 +8,8 @@ Plain HTML/CSS/JS, hosted on Cloudflare Pages. Order forms are Tally embeds that
 ```
 index.html              Home
 start-an-order/         Main intake form (Tally embed)
-services/               Round 2
-group-orders/           Round 2 (crew form, Tally embed)
+services/               The four service paths (Originals folded in here)
+group-orders/           Crew orders + crew form (Tally embed)
 about/                  Round 3
 css/tokens.css          Colors, type, spacing
 css/base.css            Reset + typography
@@ -38,7 +38,9 @@ Connect this repo in Cloudflare Pages. Framework preset: **None**, build command
 3. Set the confirmation message: "Got it! We'll review your idea and send you a design preview and quote. Nothing is final until you approve it."
 4. Copy the form ID from its share link (`tally.so/r/<ID>`) and paste it into `data-tally-id=""` in `start-an-order/index.html`.
 
-Until an ID is set, the page shows an outline of the questions instead of the form.
+Do the same for the "Plan Your Crew Order" form in `group-orders/index.html`. Point it at the same Orders table and also map Group/Organization Name.
+
+Until an ID is set, each page shows an outline of the questions instead of the form.
 
 ## Before launch
 
