@@ -36,7 +36,7 @@ export default function FaqPage() {
               className="rounded-lg border border-brand-line bg-brand-white px-6 py-5 shadow-soft"
               key={item.question}
             >
-              <summary className="cursor-pointer list-none font-display text-xl font-semibold text-brand-midnight">
+              <summary className="cursor-pointer font-display text-xl font-semibold text-brand-midnight marker:text-brand-midnight">
                 {item.question}
               </summary>
               <p className="mt-4 max-w-3xl text-sm leading-7 text-brand-muted sm:text-base">

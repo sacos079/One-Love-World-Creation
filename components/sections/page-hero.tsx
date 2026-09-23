@@ -1,3 +1,5 @@
+import type { Route } from "next";
+
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -6,8 +8,8 @@ type PageHeroProps = {
   eyebrow: string;
   title: string;
   description: string;
-  primaryCta?: { href: string; label: string };
-  secondaryCta?: { href: string; label: string };
+  primaryCta?: { href: Route; label: string };
+  secondaryCta?: { href: Route; label: string };
 };
 
 export function PageHero({

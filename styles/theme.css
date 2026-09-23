@@ -1,21 +1,21 @@
 :root {
-  --color-brand-blue: #9fdcff;
-  --color-brand-green: #c5f6c7;
-  --color-brand-orange: #ffbe7a;
-  --color-brand-lavender: #f2ebff;
-  --color-brand-white: #ffffff;
-  --color-brand-midnight: #24154f;
-  --color-brand-ink: #352a5d;
-  --color-brand-muted: #6e6790;
-  --color-brand-line: #d9d2ee;
-  --color-brand-surface: #fffdfb;
-  --color-brand-surface-alt: #f7f3ff;
-  --color-brand-success: #0f8a54;
+  --token-brand-blue: #9fdcff;
+  --token-brand-green: #c5f6c7;
+  --token-brand-orange: #ffbe7a;
+  --token-brand-lavender: #f2ebff;
+  --token-brand-white: #ffffff;
+  --token-brand-midnight: #24154f;
+  --token-brand-ink: #352a5d;
+  --token-brand-muted: #6e6790;
+  --token-brand-line: #d9d2ee;
+  --token-brand-surface: #fffdfb;
+  --token-brand-surface-alt: #f7f3ff;
+  --token-brand-success: #0f8a54;
 
-  --font-body:
+  --token-font-body:
     "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  --font-display:
+  --token-font-display:
     "Avenir Next", "Inter", ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
 
@@ -24,13 +24,13 @@
   --container-lg: 72rem;
   --container-xl: 80rem;
 
-  --radius-sm: 0.75rem;
-  --radius-md: 1.25rem;
-  --radius-lg: 1.75rem;
-  --radius-pill: 999px;
+  --token-radius-sm: 0.75rem;
+  --token-radius-md: 1.25rem;
+  --token-radius-lg: 1.75rem;
+  --token-radius-pill: 999px;
 
-  --shadow-card: 0 22px 44px rgba(36, 21, 79, 0.08);
-  --shadow-soft: 0 12px 30px rgba(36, 21, 79, 0.06);
+  --token-shadow-card: 0 22px 44px rgba(36, 21, 79, 0.08);
+  --token-shadow-soft: 0 12px 30px rgba(36, 21, 79, 0.06);
 
   --duration-fast: 150ms;
   --duration-base: 220ms;
@@ -39,31 +39,31 @@
 }
 
 @theme inline {
-  --color-background: var(--color-brand-surface);
-  --color-foreground: var(--color-brand-ink);
-  --color-brand-blue: var(--color-brand-blue);
-  --color-brand-green: var(--color-brand-green);
-  --color-brand-orange: var(--color-brand-orange);
-  --color-brand-lavender: var(--color-brand-lavender);
-  --color-brand-white: var(--color-brand-white);
-  --color-brand-midnight: var(--color-brand-midnight);
-  --color-brand-ink: var(--color-brand-ink);
-  --color-brand-muted: var(--color-brand-muted);
-  --color-brand-line: var(--color-brand-line);
-  --color-brand-surface: var(--color-brand-surface);
-  --color-brand-surface-alt: var(--color-brand-surface-alt);
-  --color-brand-success: var(--color-brand-success);
+  --color-background: var(--token-brand-surface);
+  --color-foreground: var(--token-brand-ink);
+  --color-brand-blue: var(--token-brand-blue);
+  --color-brand-green: var(--token-brand-green);
+  --color-brand-orange: var(--token-brand-orange);
+  --color-brand-lavender: var(--token-brand-lavender);
+  --color-brand-white: var(--token-brand-white);
+  --color-brand-midnight: var(--token-brand-midnight);
+  --color-brand-ink: var(--token-brand-ink);
+  --color-brand-muted: var(--token-brand-muted);
+  --color-brand-line: var(--token-brand-line);
+  --color-brand-surface: var(--token-brand-surface);
+  --color-brand-surface-alt: var(--token-brand-surface-alt);
+  --color-brand-success: var(--token-brand-success);
 
-  --font-sans: var(--font-body);
-  --font-display: var(--font-display);
+  --font-sans: var(--token-font-body);
+  --font-display: var(--token-font-display);
 
-  --radius-sm: var(--radius-sm);
-  --radius-md: var(--radius-md);
-  --radius-lg: var(--radius-lg);
-  --radius-pill: var(--radius-pill);
+  --radius-sm: var(--token-radius-sm);
+  --radius-md: var(--token-radius-md);
+  --radius-lg: var(--token-radius-lg);
+  --radius-pill: var(--token-radius-pill);
 
-  --shadow-card: var(--shadow-card);
-  --shadow-soft: var(--shadow-soft);
+  --shadow-card: var(--token-shadow-card);
+  --shadow-soft: var(--token-shadow-soft);
 
   --breakpoint-xs: 30rem;
 }

@@ -1,4 +1,24 @@
-export const homeHero = {
+import type { Route } from "next";
+
+type RouteLink = {
+  href: Route;
+  label: string;
+};
+
+type FeaturePanel = {
+  title: string;
+  description: string;
+  href: Route;
+  label: string;
+};
+
+export const homeHero: {
+  eyebrow: string;
+  title: string;
+  description: string;
+  primaryCta: RouteLink;
+  secondaryCta: RouteLink;
+} = {
   eyebrow: "ONE LOVE WORLD CREATION",
   title: "Made to represent you.",
   description:
@@ -55,7 +75,7 @@ export const galleryPlaceholders = [
   "Event shirt concept placeholder",
 ] as const;
 
-export const featurePanels = [
+export const featurePanels: FeaturePanel[] = [
   {
     title: "Quote-first customization",
     description:
@@ -77,4 +97,4 @@ export const featurePanels = [
     href: "/originals",
     label: "See the Originals plan",
   },
-] as const;
+];

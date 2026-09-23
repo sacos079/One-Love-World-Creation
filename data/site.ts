@@ -1,4 +1,16 @@
-export const navigationLinks = [
+import type { Route } from "next";
+
+type RouteLink = {
+  href: Route;
+  label: string;
+};
+
+type FooterColumn = {
+  title: string;
+  links: RouteLink[];
+};
+
+export const navigationLinks: RouteLink[] = [
   { href: "/customize", label: "Customize" },
   { href: "/group-orders", label: "Group Orders" },
   { href: "/originals", label: "Originals" },
@@ -8,7 +20,7 @@ export const navigationLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-export const footerColumns = [
+export const footerColumns: FooterColumn[] = [
   {
     title: "Explore",
     links: navigationLinks,
@@ -29,7 +41,7 @@ export const footerColumns = [
       { href: "/contact", label: "Privacy & terms placeholder" },
     ],
   },
-] as const;
+];
 
 export const contactPlaceholders = {
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@example.com",

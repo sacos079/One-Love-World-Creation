@@ -16,7 +16,7 @@ Official website foundation for **ONE LOVE WORLD CREATION** (customer-facing as 
 - Next.js
 - React
 - TypeScript
-- Tailwind CSS
+- Tailwind CSS v4 (`styles/theme.css` uses the Tailwind v4 `@theme` directive for brand tokens)
 - ESLint
 - Prettier
 
@@ -45,7 +45,11 @@ Official website foundation for **ONE LOVE WORLD CREATION** (customer-facing as 
 
 ## Environment variables
 
-Copy `.env.example` to `.env.local` and replace placeholder values before launch.
+Create `.env.local` locally by copying `.env.example`, then replace the placeholder values before launch. `.env.local` is intentionally untracked by Git.
+
+```bash
+cp .env.example .env.local
+```
 
 Current variables:
 
