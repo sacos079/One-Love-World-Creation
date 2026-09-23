@@ -10,7 +10,8 @@ index.html              Home
 start-an-order/         Main intake form (Tally embed)
 services/               The four service paths (Originals folded in here)
 group-orders/           Crew orders + crew form (Tally embed)
-about/                  Round 3
+about/                  Story, team, values, location
+404.html                Not-found page (Cloudflare Pages serves it automatically)
 css/tokens.css          Colors, type, spacing
 css/base.css            Reset + typography
 css/components.css      Nav, buttons, placeholders, ticker, steps, cards, forms, footer
@@ -44,5 +45,5 @@ Until an ID is set, each page shows an outline of the questions instead of the f
 
 ## Before launch
 
-- Swap every `.ph` placeholder block for real photos (hero, add-ons, crew, About/team).
+- Swap every `.ph` placeholder block for real photos (hero, add-ons, crew, About/team). The About photos are outlined in amber and marked "Real photo required". Never use stock photos there.
 - Set the real Instagram URL in each page footer.
