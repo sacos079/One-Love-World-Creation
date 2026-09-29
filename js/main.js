@@ -1,51 +1,50 @@
-// One Luv — nav toggle, ticker loop, Tally embeds.
 (function () {
-  // Mobile menu
-  var toggle = document.querySelector(".nav-toggle");
-  var menu = document.getElementById("mobile-menu");
-  if (toggle && menu) {
-    toggle.addEventListener("click", function () {
-      var open = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!open));
-      menu.hidden = open;
+  // Mobile nav: full-screen menu, closes on link tap or Escape
+  var header = document.querySelector('.site-header');
+  var toggle = document.querySelector('.nav-toggle');
+  function setNav(open) {
+    header.classList.toggle('nav-open', open);
+    document.documentElement.classList.toggle('nav-lock', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  if (header && toggle) {
+    toggle.addEventListener('click', function () {
+      setNav(!header.classList.contains('nav-open'));
+    });
+    header.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () { setNav(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && header.classList.contains('nav-open')) setNav(false);
+    });
+    window.matchMedia('(min-width: 900px)').addEventListener('change', function (m) {
+      if (m.matches) setNav(false);
     });
   }
 
-  // Ticker: duplicate the list once so the CSS loop is seamless.
-  document.querySelectorAll(".ticker-track").forEach(function (track) {
-    var list = track.querySelector("ul");
-    if (!list) return;
-    var copy = list.cloneNode(true);
-    copy.setAttribute("aria-hidden", "true");
-    track.appendChild(copy);
-  });
+  // Ticker: duplicate content so the loop is seamless
+  var track = document.querySelector('.ticker-track');
+  if (track) track.innerHTML += track.innerHTML;
 
-  // Tally embeds. Set data-tally-id on a .form-embed to go live;
-  // until then the field outline inside .form-pending stays visible.
-  var embeds = document.querySelectorAll(".form-embed[data-tally-id]");
-  var live = [];
-  embeds.forEach(function (el) {
-    var id = (el.getAttribute("data-tally-id") || "").trim();
-    if (!id) return;
-    var iframe = document.createElement("iframe");
-    iframe.className = "tally-frame";
-    iframe.title = el.getAttribute("data-title") || "Order form";
-    iframe.loading = "lazy";
-    iframe.setAttribute("data-tally-src",
-      "https://tally.so/embed/" + encodeURIComponent(id) +
-      "?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1");
-    el.innerHTML = "";
-    el.appendChild(iframe);
-    live.push(iframe);
+  // Tally embed: load iframes, or show a setup note until a real form ID is set
+  var frames = document.querySelectorAll('iframe[data-tally-src]');
+  var live = 0;
+  frames.forEach(function (f) {
+    var src = f.getAttribute('data-tally-src');
+    if (src.indexOf('REPLACE_WITH_FORM_ID') !== -1) {
+      f.hidden = true;
+      var note = f.parentNode.querySelector('.form-setup-note');
+      if (note) note.hidden = false;
+    } else {
+      f.src = src;
+      live++;
+    }
   });
-
-  if (live.length) {
-    var s = document.createElement("script");
-    s.src = "https://tally.so/widgets/embed.js";
-    s.onload = function () { if (window.Tally) window.Tally.loadEmbeds(); };
-    s.onerror = function () {
-      live.forEach(function (f) { f.src = f.getAttribute("data-tally-src"); });
-    };
+  if (live && !document.getElementById('tally-js')) {
+    var s = document.createElement('script');
+    s.id = 'tally-js';
+    s.src = 'https://tally.so/widgets/embed.js';
     document.body.appendChild(s);
   }
 })();

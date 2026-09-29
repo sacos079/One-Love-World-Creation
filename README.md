@@ -16,6 +16,8 @@ css/tokens.css          Colors, type, spacing
 css/base.css            Reset + typography
 css/components.css      Nav, buttons, placeholders, ticker, steps, cards, forms, footer
 js/main.js              Mobile menu, ticker loop, Tally embed loader
+fonts/                  Self-hosted Archivo + DM Sans (SIL Open Font License)
+images/favicon.svg      Favicon (stand-in patch mark until the real logo exists)
 images/placeholders/    Placeholder assets until real photos exist
 ```
 
@@ -37,13 +39,14 @@ Connect this repo in Cloudflare Pages. Framework preset: **None**, build command
 2. In Tally: **Integrations → Airtable**, map each field to the Orders table columns (spec section 8).
    Add hidden fields for the system columns: `Order Status` = `Inquiry`. Order Date can map to Tally's submission time.
 3. Set the confirmation message: "Got it! We'll review your idea and send you a design preview and quote. Nothing is final until you approve it."
-4. Copy the form ID from its share link (`tally.so/r/<ID>`) and paste it into `data-tally-id=""` in `start-an-order/index.html`.
+4. Copy the form ID from its share link (`tally.so/r/<ID>`) and replace `REPLACE_WITH_FORM_ID` in the `data-tally-src` attribute in `start-an-order/index.html`. The full field list and Airtable mapping is in an HTML comment on that page.
 
 Do the same for the "Plan Your Crew Order" form in `group-orders/index.html`. Point it at the same Orders table and also map Group/Organization Name.
 
-Until an ID is set, each page shows an outline of the questions instead of the form.
+Until an ID is set, each page shows a "Form not connected yet" note instead of the form. The forms sit on a cream panel so Tally's default dark text stays readable. Keep Tally's theme light.
 
 ## Before launch
 
-- Swap every `.ph` placeholder block for real photos (hero, add-ons, crew, About/team). The About photos are outlined in amber and marked "Real photo required". Never use stock photos there.
+- Swap every `.ph` placeholder (the "Photo needed" frames) for real photos: put an `<img>` inside the `<figure class="ph">` and remove the tag and caption. Hero, add-ons, crew, and About/team all need them. Never use stock photos for Valerie or Sebastian.
+- Replace the stand-in logo mark (the heart patch in the header, footer and `images/favicon.svg`) if you have a real logo.
 - Set the real Instagram URL in each page footer.
