@@ -2,20 +2,23 @@
 :root {
   color-scheme: dark;
 
-  /* Color — Miami bright: black base, full-color blocks */
-  --bg: #0E0A12;
-  --surface: #1A1420;
-  --surface-raised: #251C2C;
-  --pink: #FF3D8B;
+  /* Color — midnight purple base; magnetic purple leads, pink is a minor highlight */
+  --bg: #0D0918;
+  --surface: #181230;
+  --surface-raised: #221A40;
+  --purple: #7B3FF2;
+  --violet: #A987FF;
+  --pink: #FF4F9A;
   --orange: #FF7A2F;
   --yellow: #FFD23F;
   --turq: #1FD8C8;
-  --violet: #A98BFF;
-  --text: #FFF7F0;
-  --text-muted: #B8ACBB;
-  --border: #33283A;
-  --on-color: #140A10;
-  --sunset: linear-gradient(100deg, var(--pink) 0%, var(--orange) 55%, var(--yellow) 100%);
+  --text: #FBF8FF;
+  --text-muted: #B3AACB;
+  --border: #2F2552;
+  --on-color: #120B1C;
+  --on-purple: #FFFFFF;
+  --sunset: linear-gradient(100deg, var(--violet) 0%, var(--pink) 60%, var(--orange) 100%);
+  --magnetic: linear-gradient(120deg, #2A1270 0%, var(--purple) 55%, #B24BF3 100%);
 
   /* Type */
   --font-display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
