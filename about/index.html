@@ -2,85 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>About — One Luv</title>
-  <meta name="description" content="One Luv is a family-owned custom apparel shop in Miami, run by Valerie (design & production) and Sebastian (operations).">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | One Luv</title>
+  <meta name="description" content="One Luv is a Miami family business. Valerie handles design and production, Sebastian runs operations. Every order is handled personally.">
   <meta name="theme-color" content="#0D0D0F">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%230D0D0F%22/%3E%3Cpath d=%22M16 25s-9-5.6-9-11.6A4.9 4.9 0 0 1 16 11a4.9 4.9 0 0 1 9 2.4C25 19.4 16 25 16 25z%22 fill=%22%23E8A33D%22/%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,600..900&family=DM+Sans:opsz,wght@9..40,400..700&display=swap">
+  <meta property="og:title" content="About | One Luv">
+  <meta property="og:description" content="One Luv is a Miami family business. Valerie handles design and production, Sebastian runs operations. Every order is handled personally.">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/tokens.css">
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/components.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-
 <header class="site-header">
-  <div class="wrap">
+  <div class="wrap nav">
     <a class="logo" href="/" aria-label="One Luv home">
-      <span class="logo-mark">One <span>Luv</span></span>
-      <span class="logo-sub">World Creation</span>
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#E8A33D"/><circle cx="20" cy="20" r="15.5" fill="none" stroke="#141414" stroke-width="1.2" stroke-dasharray="2.2 1.6"/><path d="M20 28.5s-7.5-4.6-7.5-10a4.2 4.2 0 0 1 7.5-2.6 4.2 4.2 0 0 1 7.5 2.6c0 5.4-7.5 10-7.5 10Z" fill="#141414"/></svg>
+      <span class="logo-word">One Luv</span>
     </a>
-    <nav class="nav-links" aria-label="Main">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/group-orders/">Group Orders</a></li>
-        <li><a href="/about/" aria-current="page">About</a></li>
-      </ul>
+    <nav class="nav-links" id="site-nav" aria-label="Main">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/group-orders">Group Orders</a>
+        <a href="/about" aria-current="page">About</a>
     </nav>
-    <a class="btn btn-primary btn-sm" href="/start-an-order/">Start an Order</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="visually-hidden">Menu</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
+    <div class="nav-actions">
+      <a class="btn btn-primary btn-sm" href="/start-an-order">Start an Order</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span></button>
+    </div>
   </div>
-  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" hidden>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/services/">Services</a></li>
-      <li><a href="/group-orders/">Group Orders</a></li>
-      <li><a href="/about/" aria-current="page">About</a></li>
-    </ul>
-  </nav>
 </header>
-
 <main id="main">
   <section class="page-head">
-    <div class="wrap story">
-      <div class="story-copy">
-        <span class="eyebrow">About One Luv</span>
-        <h1>A Miami family business, built by word of mouth.</h1>
-        <p>It started with customizing pieces for people in our community — a name on a jacket, a patch on a vest, a matching set for a family reunion. People wore them, people asked, and it grew from there.</p>
+    <div class="wrap about-head">
+      <div class="prose reveal">
+        <h1>A Miami family business, made by hand.</h1>
+        <p class="lead-in">One Luv started by customizing pieces for people in our community, and it grew by word of mouth.</p>
         <p>Valerie handles design and production. Sebastian runs the operations and business side. Every order that comes through is handled personally, by us.</p>
         <p>We grew by word of mouth because we care about every piece we make. That hasn't changed.</p>
       </div>
-      <div class="ph ph-required" role="img" aria-label="Photo placeholder: real photo required">
-        <span class="ph-label"><strong>Real photo required</strong>Valerie at the heat press in the One Luv studio</span>
-      </div>
+      <figure class="ph ph--press"><span class="ph-tag">Photo needed</span><figcaption>Valerie at the heat press in the One Luv studio. Real photo required, no stock substitutes</figcaption></figure>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section crew">
     <div class="wrap">
-      <div class="section-head"><h2>The team</h2></div>
+      <div class="section-head">
+        <h2>The team</h2>
+        <p class="lede">Two people, every order.</p>
+      </div>
       <div class="team">
         <article class="member">
-          <div class="ph ph-required" role="img" aria-label="Photo placeholder: real photo of Valerie required">
-            <span class="ph-label"><strong>Real photo required</strong>Valerie</span>
-          </div>
-          <h3>Valerie</h3>
-          <p class="role">Design &amp; Production</p>
+          <figure class="ph ph--person"><span class="ph-tag">Photo needed</span><figcaption>Real photo of Valerie</figcaption></figure>
+          <h3 class="member-name">Valerie</h3>
+          <p class="member-role">Design &amp; Production</p>
           <p>Valerie is the creative force behind One Luv. She handles every design and runs the production — heat press, DTF, patches, and more. If it's made with care, it came through her hands.</p>
         </article>
         <article class="member">
-          <div class="ph ph-required" role="img" aria-label="Photo placeholder: real photo of Sebastian required">
-            <span class="ph-label"><strong>Real photo required</strong>Sebastian</span>
-          </div>
-          <h3>Sebastian</h3>
-          <p class="role">Operations &amp; Business</p>
+          <figure class="ph ph--person"><span class="ph-tag">Photo needed</span><figcaption>Real photo of Sebastian</figcaption></figure>
+          <h3 class="member-name">Sebastian</h3>
+          <p class="member-role">Operations &amp; Business</p>
           <p>Sebastian keeps everything running — from taking orders to coordinating crew deliveries. He's the reason things show up on time and the reason customers always know what's happening with their order.</p>
         </article>
       </div>
@@ -89,59 +73,61 @@
 
   <section class="section">
     <div class="wrap">
-      <div class="section-head"><h2>What we stand on</h2></div>
-      <ul class="list-cards detailed three">
-        <li><h3>Personal</h3><p>Every order is handled directly by our family. Nothing gets outsourced.</p></li>
-        <li><h3>Community</h3><p>Built on families, neighborhoods, and cultures — the people who've worn our work from day one.</p></li>
-        <li><h3>Made with care</h3><p>We take pride in every stitch, every press, every name. It shows.</p></li>
-      </ul>
+      <div class="section-head">
+        <h2>What we stand for</h2>
+      </div>
+      <div class="edge-grid cols-3">
+        <article class="edge-card"><h3>Personal</h3><p>Every order is handled directly by the family, not outsourced.</p></article>
+        <article class="edge-card"><h3>Community</h3><p>Built on families, neighborhoods, and cultures.</p></article>
+        <article class="edge-card"><h3>Made with care</h3><p>We take pride in every stitch, every press, every name. It shows.</p></article>
+      </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap split">
-      <div class="section-head" style="margin-bottom:0">
-        <h2>Based in Miami, FL</h2>
-        <p class="lede">We serve Miami and South Florida. Pickup available. Delivery options for larger orders.</p>
-      </div>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="/start-an-order/">Start Your Order</a>
-        <a class="btn btn-ghost" href="/group-orders/">Group &amp; Team Orders</a>
-      </div>
+  <section class="section location">
+    <div class="wrap">
+      <h2>Based in Miami, FL</h2>
+      <p class="lede">We serve Miami and South Florida. Pickup available. Delivery options for larger orders.</p>
+      <div class="btn-row"><a class="btn btn-primary" href="/start-an-order">Start Your Order</a></div>
     </div>
   </section>
 </main>
-
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
+    <div class="footer-top">
+      <div>
         <a class="logo" href="/" aria-label="One Luv home">
-          <span class="logo-mark">One <span>Luv</span></span>
-          <span class="logo-sub">World Creation</span>
+          <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#E8A33D"/><circle cx="20" cy="20" r="15.5" fill="none" stroke="#141414" stroke-width="1.2" stroke-dasharray="2.2 1.6"/><path d="M20 28.5s-7.5-4.6-7.5-10a4.2 4.2 0 0 1 7.5-2.6 4.2 4.2 0 0 1 7.5 2.6c0 5.4-7.5 10-7.5 10Z" fill="#141414"/></svg>
+          <span class="logo-word">One Luv</span>
         </a>
-        <p class="tagline">Made to represent you.</p>
-        <p>Family-owned. Miami-made.</p>
+        <p class="footer-tag">Made to represent you.</p>
+        <p class="muted">Family-owned. Miami-made.</p>
+        <a class="btn btn-primary" href="/start-an-order">Start Your Order</a>
       </div>
-      <nav class="footer-nav" aria-label="Footer">
-        <ul>
+      <nav aria-label="Footer">
+        <p class="footer-label">Explore</p>
+        <ul class="footer-links">
           <li><a href="/">Home</a></li>
-          <li><a href="/services/">Services</a></li>
-          <li><a href="/group-orders/">Group Orders</a></li>
-          <li><a href="/start-an-order/">Start an Order</a></li>
-          <li><a href="/about/">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/group-orders">Group Orders</a></li>
+          <li><a href="/start-an-order">Start an Order</a></li>
+          <li><a href="/about">About</a></li>
         </ul>
       </nav>
-      <div class="footer-meta">
+      <div>
+        <p class="footer-label">Find us</p>
         <p>Miami, FL — Custom Apparel &amp; Embroidery</p>
-        <a href="https://www.instagram.com/" rel="noopener">Instagram</a>
-        <a class="btn btn-primary btn-sm" href="/start-an-order/">Start Your Order</a>
+        <!-- TODO: replace # with the real Instagram URL -->
+        <ul class="footer-links"><li><a href="#" rel="noopener">Instagram</a></li></ul>
       </div>
     </div>
-    <p class="footer-legal">© 2026 One Love World Creation</p>
+    <p class="footer-wordmark" aria-hidden="true">One Luv</p>
+    <div class="footer-legal">
+      <span>© 2026 One Love World Creation</span>
+      <span>Made in Miami, FL</span>
+    </div>
   </div>
 </footer>
-
-<script src="/js/main.js" defer></script>
+<script src="/js/main.js"></script>
 </body>
 </html>

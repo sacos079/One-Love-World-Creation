@@ -2,83 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>One Luv — Custom Apparel in Miami</title>
-  <meta name="description" content="Family-owned custom apparel in Miami. Embroidery, patches, DTF prints, names and custom graphics on tees, hoodies, vests, jackets and hats.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One Luv | Custom Apparel in Miami</title>
+  <meta name="description" content="Custom embroidery, patches, DTF prints and more, straight out of Miami. Made to represent you.">
   <meta name="theme-color" content="#0D0D0F">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%230D0D0F%22/%3E%3Cpath d=%22M16 25s-9-5.6-9-11.6A4.9 4.9 0 0 1 16 11a4.9 4.9 0 0 1 9 2.4C25 19.4 16 25 16 25z%22 fill=%22%23E8A33D%22/%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,600..900&family=DM+Sans:opsz,wght@9..40,400..700&display=swap">
+  <meta property="og:title" content="One Luv | Custom Apparel in Miami">
+  <meta property="og:description" content="Custom embroidery, patches, DTF prints and more, straight out of Miami. Made to represent you.">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/tokens.css">
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/components.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-
 <header class="site-header">
-  <div class="wrap">
+  <div class="wrap nav">
     <a class="logo" href="/" aria-label="One Luv home">
-      <span class="logo-mark">One <span>Luv</span></span>
-      <span class="logo-sub">World Creation</span>
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#E8A33D"/><circle cx="20" cy="20" r="15.5" fill="none" stroke="#141414" stroke-width="1.2" stroke-dasharray="2.2 1.6"/><path d="M20 28.5s-7.5-4.6-7.5-10a4.2 4.2 0 0 1 7.5-2.6 4.2 4.2 0 0 1 7.5 2.6c0 5.4-7.5 10-7.5 10Z" fill="#141414"/></svg>
+      <span class="logo-word">One Luv</span>
     </a>
-    <nav class="nav-links" aria-label="Main">
-      <ul>
-        <li><a href="/" aria-current="page">Home</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/group-orders/">Group Orders</a></li>
-        <li><a href="/about/">About</a></li>
-      </ul>
+    <nav class="nav-links" id="site-nav" aria-label="Main">
+        <a href="/" aria-current="page">Home</a>
+        <a href="/services">Services</a>
+        <a href="/group-orders">Group Orders</a>
+        <a href="/about">About</a>
     </nav>
-    <a class="btn btn-primary btn-sm" href="/start-an-order/">Start an Order</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="visually-hidden">Menu</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
+    <div class="nav-actions">
+      <a class="btn btn-primary btn-sm" href="/start-an-order">Start an Order</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span></button>
+    </div>
   </div>
-  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" hidden>
-    <ul>
-      <li><a href="/" aria-current="page">Home</a></li>
-      <li><a href="/services/">Services</a></li>
-      <li><a href="/group-orders/">Group Orders</a></li>
-      <li><a href="/about/">About</a></li>
-    </ul>
-  </nav>
 </header>
-
 <main id="main">
   <section class="hero">
-    <div class="wrap">
+    <div class="wrap hero-grid">
       <div class="hero-copy reveal">
-        <span class="eyebrow">Miami Custom Apparel</span>
-        <h1>
-          <span class="line">Made to</span>
-          <span class="line line-accent">Represent you.</span>
-        </h1>
-        <p class="lede hero-sub">Custom embroidery, patches, DTF prints &amp; more — straight out of Miami.</p>
+        <p class="eyebrow">Miami Custom Apparel</p>
+        <h1 class="hero-title"><span class="line">Made to</span><span class="line accent">Represent you.</span></h1>
+        <p class="lede">Custom embroidery, patches, DTF prints &amp; more — straight out of Miami.</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="/start-an-order/">Start Your Order</a>
-          <a class="btn btn-ghost" href="/group-orders/">Group &amp; Team Orders</a>
+          <a class="btn btn-primary" href="/start-an-order">Start Your Order</a>
+          <a class="btn btn-ghost" href="/group-orders">Group &amp; Team Orders</a>
         </div>
       </div>
-      <div class="ph" role="img" aria-label="Photo placeholder">
-        <span class="ph-label"><strong>Photo placeholder</strong>Hero — finished garment or production close-up, warm tone</span>
+      <div class="hero-media">
+        <svg class="badge" viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="98" fill="#B9A6F5"/>
+          <circle cx="100" cy="100" r="89" fill="none" stroke="#141414" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <defs><path id="badge-ring" d="M100 100m-68 0a68 68 0 1 1 136 0a68 68 0 1 1-136 0"/></defs>
+          <text font-size="17"><textPath href="#badge-ring" textLength="420" lengthAdjust="spacing">Family-owned &#10022; Miami-made &#10022; Made to represent you &#10022;</textPath></text>
+          <path d="M100 124s-22-13.5-22-29.5a12.3 12.3 0 0 1 22-7.6 12.3 12.3 0 0 1 22 7.6c0 16-22 29.5-22 29.5Z" fill="#141414"/>
+        </svg>
+        <figure class="ph ph--hoodie"><span class="ph-tag">Photo needed</span><figcaption>Hero — finished garment or production close-up, warm tone</figcaption></figure>
       </div>
     </div>
   </section>
 
-  <div class="ticker" aria-label="What we make">
-    <div class="ticker-track">
-      <ul>
-        <li>Patches</li>
-        <li>DTF Prints</li>
-        <li>Names</li>
-        <li>Vests</li>
-        <li>Hoodies</li>
-        <li>Embroidery</li>
-        <li>Custom Graphics</li>
-      </ul>
+  <div class="ticker-zone" aria-hidden="true">
+    <div class="ticker">
+      <div class="ticker-track"><span>Patches</span><span>DTF Prints</span><span>Names</span><span>Vests</span><span>Hoodies</span><span>Embroidery</span><span>Custom Graphics</span></div>
     </div>
   </div>
 
@@ -86,123 +70,94 @@
     <div class="wrap">
       <div class="section-head">
         <h2>How it works</h2>
+        <p class="lede">Three steps from idea to wearing it. You see and approve everything before we make a thing.</p>
       </div>
       <ol class="steps">
-        <li>
-          <div>
-            <h3>Tell us what you need</h3>
-            <p>Bring your own garment or let us supply one. Share your vision — we handle the rest.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h3>We bring your vision to life</h3>
-            <p>Embroidery, patches, DTF prints, names — crafted with care in our Miami shop.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h3>Pick it up or we ship it</h3>
-            <p>Ready to wear, ready to rep. Your custom piece, delivered.</p>
-          </div>
-        </li>
+        <li><span class="step-num" aria-hidden="true">01</span><h3>Tell us what you need</h3><p>Bring your own garment or let us supply one. Share your vision — we handle the rest.</p></li>
+        <li><span class="step-num" aria-hidden="true">02</span><h3>We bring your vision to life</h3><p>Embroidery, patches, DTF prints, names — crafted with care in our Miami shop.</p></li>
+        <li><span class="step-num" aria-hidden="true">03</span><h3>Pick it up or we ship it</h3><p>Ready to wear, ready to rep. Your custom piece, delivered.</p></li>
       </ol>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" style="padding-top:0">
     <div class="wrap">
       <div class="section-head">
         <h2>What we can add</h2>
-        <p class="lede">Mix and match on any piece. Not sure what fits your idea? Just tell us — we'll point you the right way.</p>
+        <p class="lede">Mix and match. One piece can carry a patch, a name, and a graphic.</p>
       </div>
-      <div class="addon-grid">
-        <article class="addon">
-          <div class="ph" role="img" aria-label="Photo placeholder"><span class="ph-label"><strong>Photo placeholder</strong>Embroidery close-up</span></div>
-          <h3>Embroidery</h3>
-          <p>Thread-stitched logos, names, and designs that last a lifetime.</p>
-        </article>
-        <article class="addon">
-          <div class="ph" role="img" aria-label="Photo placeholder"><span class="ph-label"><strong>Photo placeholder</strong>Patch detail</span></div>
-          <h3>Patches</h3>
-          <p>Custom iron-on and sew-on patches for vests, jackets, and more.</p>
-        </article>
-        <article class="addon">
-          <div class="ph" role="img" aria-label="Photo placeholder"><span class="ph-label"><strong>Photo placeholder</strong>DTF print close-up</span></div>
-          <h3>DTF Prints</h3>
-          <p>Full-color prints pressed right onto the fabric — sharp detail and bold color that hold up wash after wash.</p>
-        </article>
-        <article class="addon">
-          <div class="ph" role="img" aria-label="Photo placeholder"><span class="ph-label"><strong>Photo placeholder</strong>Name / text close-up</span></div>
-          <h3>Name Customization</h3>
-          <p>Personalized names and numbers for teams, crews, and individuals.</p>
-        </article>
+      <div class="bento">
+        <article class="tile tile--hero"><figure class="ph ph--hoop"><span class="ph-tag">Photo needed</span><figcaption>Embroidery close-up</figcaption></figure><div class="tile-body"><h3>Embroidery</h3><p>Thread-stitched logos, names, and designs that last a lifetime.</p></div></article>
+        <article class="tile tile--side"><figure class="ph ph--patch"><span class="ph-tag">Photo needed</span><figcaption>Patch detail</figcaption></figure><div class="tile-body"><h3>Patches</h3><p>Custom iron-on and sew-on patches for vests, jackets, and more.</p></div></article>
+        <article class="tile tile--side"><figure class="ph ph--print"><span class="ph-tag">Photo needed</span><figcaption>DTF print close-up</figcaption></figure><div class="tile-body"><h3>DTF Prints</h3><p>Full-color designs printed on film, then pressed onto your garment. Sharp detail, soft feel.</p></div></article>
+        <article class="tile tile--wide"><figure class="ph ph--name"><span class="ph-tag">Photo needed</span><figcaption>Name / text close-up</figcaption></figure><div class="tile-body"><h3>Name Customization</h3><p>Personalized names and numbers for teams, crews, and individuals.</p></div></article>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap split">
-      <div class="section-head" style="margin-bottom:0">
-        <span class="eyebrow">Group &amp; Team Orders</span>
+  <section class="section crew">
+    <div class="wrap crew-grid">
+      <div>
+        <p class="eyebrow">Group &amp; Team Orders</p>
         <h2>Outfitting your whole crew</h2>
         <p class="lede">From airport ground teams to event squads — we make sure everyone matches.</p>
-        <ul class="list-cards">
+        <ul class="row-list">
           <li>Airport Ground Crews</li>
           <li>Work Teams</li>
           <li>Events &amp; Groups</li>
         </ul>
-        <div class="btn-row" style="margin-top:var(--space-2)">
-          <a class="btn btn-primary" href="/group-orders/">Get a Group Quote</a>
-        </div>
+        <a class="btn btn-primary" href="/group-orders">Get a Group Quote</a>
       </div>
-      <div class="ph" role="img" aria-label="Photo placeholder">
-        <span class="ph-label"><strong>Photo placeholder</strong>Crew wearing matching gear, workplace-neutral — no airline branding or tail livery</span>
-      </div>
+      <figure class="ph ph--group"><span class="ph-tag">Photo needed</span><figcaption>Crew wearing matching gear, workplace-neutral — no real airline branding or tail livery</figcaption></figure>
     </div>
   </section>
 
-  <section class="cta-band">
+  <section class="cta-section">
     <div class="wrap">
-      <div style="display:grid;gap:var(--space-2)">
+      <div class="patch">
         <h2>Ready to make something real?</h2>
         <p>Tell us about your project and we'll get back to you fast.</p>
+        <a class="btn btn-dark" href="/start-an-order">Start Your Order</a>
       </div>
-      <div><a class="btn btn-dark" href="/start-an-order/">Start Your Order</a></div>
     </div>
   </section>
 </main>
-
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
+    <div class="footer-top">
+      <div>
         <a class="logo" href="/" aria-label="One Luv home">
-          <span class="logo-mark">One <span>Luv</span></span>
-          <span class="logo-sub">World Creation</span>
+          <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#E8A33D"/><circle cx="20" cy="20" r="15.5" fill="none" stroke="#141414" stroke-width="1.2" stroke-dasharray="2.2 1.6"/><path d="M20 28.5s-7.5-4.6-7.5-10a4.2 4.2 0 0 1 7.5-2.6 4.2 4.2 0 0 1 7.5 2.6c0 5.4-7.5 10-7.5 10Z" fill="#141414"/></svg>
+          <span class="logo-word">One Luv</span>
         </a>
-        <p class="tagline">Made to represent you.</p>
-        <p>Family-owned. Miami-made.</p>
+        <p class="footer-tag">Made to represent you.</p>
+        <p class="muted">Family-owned. Miami-made.</p>
+        <a class="btn btn-primary" href="/start-an-order">Start Your Order</a>
       </div>
-      <nav class="footer-nav" aria-label="Footer">
-        <ul>
+      <nav aria-label="Footer">
+        <p class="footer-label">Explore</p>
+        <ul class="footer-links">
           <li><a href="/">Home</a></li>
-          <li><a href="/services/">Services</a></li>
-          <li><a href="/group-orders/">Group Orders</a></li>
-          <li><a href="/start-an-order/">Start an Order</a></li>
-          <li><a href="/about/">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/group-orders">Group Orders</a></li>
+          <li><a href="/start-an-order">Start an Order</a></li>
+          <li><a href="/about">About</a></li>
         </ul>
       </nav>
-      <div class="footer-meta">
+      <div>
+        <p class="footer-label">Find us</p>
         <p>Miami, FL — Custom Apparel &amp; Embroidery</p>
-        <a href="https://www.instagram.com/" rel="noopener">Instagram</a>
-        <a class="btn btn-primary btn-sm" href="/start-an-order/">Start Your Order</a>
+        <!-- TODO: replace # with the real Instagram URL -->
+        <ul class="footer-links"><li><a href="#" rel="noopener">Instagram</a></li></ul>
       </div>
     </div>
-    <p class="footer-legal">© 2026 One Love World Creation</p>
+    <p class="footer-wordmark" aria-hidden="true">One Luv</p>
+    <div class="footer-legal">
+      <span>© 2026 One Love World Creation</span>
+      <span>Made in Miami, FL</span>
+    </div>
   </div>
 </footer>
-
-<script src="/js/main.js" defer></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
