@@ -13,6 +13,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+main { overflow-x: clip; }
+
 img, svg, iframe { display: block; max-width: 100%; }
 
 h1, h2, h3 {
@@ -30,10 +32,10 @@ h3 { font-size: var(--step-1); font-stretch: 85%; font-weight: 800; line-height:
 
 p { margin: 0; max-width: 62ch; }
 
-a { color: inherit; text-decoration-color: var(--amber-dim); text-underline-offset: 3px; }
-a:hover { color: var(--lavender); text-decoration-color: var(--lavender); }
+a { color: inherit; text-decoration-color: color-mix(in srgb, var(--pink) 55%, var(--bg)); text-underline-offset: 3px; }
+a:hover { color: var(--turq); text-decoration-color: var(--turq); }
 
-:focus-visible { outline: 2px solid var(--lavender); outline-offset: 3px; border-radius: 2px; }
+:focus-visible { outline: 2px solid var(--turq); outline-offset: 3px; border-radius: 2px; }
 
 .wrap {
   width: 100%;
@@ -48,7 +50,7 @@ a:hover { color: var(--lavender); text-decoration-color: var(--lavender); }
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--lavender);
+  color: var(--turq);
 }
 
 .lede { font-size: var(--step-1); color: var(--text-muted); line-height: 1.5; }

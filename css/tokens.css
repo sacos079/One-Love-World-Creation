@@ -2,18 +2,20 @@
 :root {
   color-scheme: dark;
 
-  /* Color */
-  --bg: #0D0D0F;
-  --surface: #18181B;
-  --surface-raised: #212124;
-  --amber: #E8A33D;
-  --amber-dim: #8A611F;
-  --lavender: #B9A6F5;
-  --teal: #4FD1C5;
-  --text: #F4F1EA;
-  --text-muted: #9C9891;
-  --border: #2C2C30;
-  --on-amber: #1A1206;
+  /* Color — Miami bright: black base, full-color blocks */
+  --bg: #0E0A12;
+  --surface: #1A1420;
+  --surface-raised: #251C2C;
+  --pink: #FF3D8B;
+  --orange: #FF7A2F;
+  --yellow: #FFD23F;
+  --turq: #1FD8C8;
+  --violet: #A98BFF;
+  --text: #FFF7F0;
+  --text-muted: #B8ACBB;
+  --border: #33283A;
+  --on-color: #140A10;
+  --sunset: linear-gradient(100deg, var(--pink) 0%, var(--orange) 55%, var(--yellow) 100%);
 
   /* Type */
   --font-display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
