@@ -1,4 +1,4 @@
-// One Luv — nav toggle, ticker loop, Tally embeds.
+// One Luv — nav toggle and ticker loop. The order form lives in order-form.js.
 (function () {
   // Mobile menu
   var toggle = document.querySelector(".nav-toggle");
@@ -19,33 +19,4 @@
     copy.setAttribute("aria-hidden", "true");
     track.appendChild(copy);
   });
-
-  // Tally embeds. Set data-tally-id on a .form-embed to go live;
-  // until then the field outline inside .form-pending stays visible.
-  var embeds = document.querySelectorAll(".form-embed[data-tally-id]");
-  var live = [];
-  embeds.forEach(function (el) {
-    var id = (el.getAttribute("data-tally-id") || "").trim();
-    if (!id) return;
-    var iframe = document.createElement("iframe");
-    iframe.className = "tally-frame";
-    iframe.title = el.getAttribute("data-title") || "Order form";
-    iframe.loading = "lazy";
-    iframe.setAttribute("data-tally-src",
-      "https://tally.so/embed/" + encodeURIComponent(id) +
-      "?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1");
-    el.innerHTML = "";
-    el.appendChild(iframe);
-    live.push(iframe);
-  });
-
-  if (live.length) {
-    var s = document.createElement("script");
-    s.src = "https://tally.so/widgets/embed.js";
-    s.onload = function () { if (window.Tally) window.Tally.loadEmbeds(); };
-    s.onerror = function () {
-      live.forEach(function (f) { f.src = f.getAttribute("data-tally-src"); });
-    };
-    document.body.appendChild(s);
-  }
 })();

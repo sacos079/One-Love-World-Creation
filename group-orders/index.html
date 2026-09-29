@@ -96,29 +96,8 @@
       <div class="form-shell">
         <h2>Plan your crew order</h2>
         <p class="lede" style="margin:-0.75rem 0 var(--space-3)">Tell us about your group and we'll take it from there.</p>
-        <!-- Paste the Tally form ID (e.g. "wAbC12") into data-tally-id to go live. -->
-        <div class="form-embed" data-tally-id="" data-title="Plan Your Crew Order form">
-          <div class="form-pending">
-            <p class="notice"><strong>Form coming soon.</strong> The live crew form connects here. Until then, this is what we'll ask you.</p>
-            <div class="field-group">
-              <h3>You</h3>
-              <ul class="field-list">
-                <li>Your name <span>Required</span></li>
-                <li>Phone</li>
-                <li>Email <span>Required</span></li>
-              </ul>
-            </div>
-            <div class="field-group">
-              <h3>Your group</h3>
-              <ul class="field-list">
-                <li>Group or organization name <span>e.g. Metro Ground Crew, Ramirez Family Reunion</span></li>
-                <li>Estimated quantity</li>
-                <li>Garment type <span>T-shirt, hoodie, vest, jacket, hat, other</span></li>
-                <li>Design idea <span>Required</span></li>
-                <li>Needed by</li>
-              </ul>
-            </div>
-          </div>
+        <div class="order-form" data-preset="group">
+          <noscript><p class="of-note">This form needs JavaScript. You can also DM us on Instagram with your idea.</p></noscript>
         </div>
       </div>
     </div>
@@ -156,5 +135,6 @@
 </footer>
 
 <script src="/js/main.js" defer></script>
+<script type="module" src="/js/order-form.js"></script>
 </body>
 </html>
