@@ -55,7 +55,7 @@ The gallery has 12 placeholder tiles in `public/gallery/index.html`. To swap one
 <figcaption>Short caption</figcaption>
 ```
 
-3. Keep `data-cat` on the `<figure>` as one of `embroidery`, `patches`, `dtf`, `names`, `crews` so the filter works.
+3. Keep `data-cat` on the `<figure>` as one of `dtf`, `patches`, `names`, `crews` so the filter works.
    Add `tall` or `wide` to the figure's class to make a bigger tile.
 
 ## The order form
