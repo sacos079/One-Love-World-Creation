@@ -1,7 +1,7 @@
 # One Luv — One Love World Creation
 
 Static website for One Luv, a family-owned custom apparel shop in Miami.
-Plain HTML/CSS/JS, hosted on Cloudflare Pages. The order form saves to the Airtable **Orders** table through a Pages Function.
+Plain HTML/CSS/JS, hosted as a Cloudflare Worker with static assets. The order form saves to the Airtable **Orders** table through the Worker.
 
 ## Structure
 
