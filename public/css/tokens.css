@@ -18,6 +18,12 @@
   --on-color: #1A1206;
   --on-purple: #FFFFFF;
   --magnetic: linear-gradient(120deg, #24105F 0%, var(--purple) 60%, #9B4DF5 100%);
+  /* Marquee palette: the film-sheet strip on the home page */
+  --mq-midnight: #24133F;
+  --mq-blue: #9ED8FF;
+  --mq-green: #BDECC6;
+  --mq-orange: #FFBE7A;
+  --mq-lavender: #F2ECFF;
   --lift: 0 14px 34px -20px rgba(0, 0, 0, 0.7);
 
   /* Type */

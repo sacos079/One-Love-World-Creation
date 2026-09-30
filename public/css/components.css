@@ -193,45 +193,72 @@
   .hero .wrap { grid-template-columns: 1.25fr 1fr; align-items: center; gap: var(--space-5); }
 }
 
-/* ---------- Ticker ---------- */
-.ticker {
+/* ---------- Marquee: two lanes of type on a DTF film sheet ---------- */
+.marquee {
+  position: relative;
   overflow: hidden;
-  background: var(--purple);
-  color: var(--on-purple);
-  padding-block: 0.9rem;
-  transform: rotate(-1.2deg);
-  margin-inline: -2%;
+  display: grid;
+  gap: 4px;
+  padding: 38px 0 40px;
+  background:
+    linear-gradient(45deg, rgba(242,236,255,.045) 25%, transparent 25% 75%, rgba(242,236,255,.045) 75%) 0 0 / 24px 24px,
+    linear-gradient(45deg, rgba(242,236,255,.045) 25%, transparent 25% 75%, rgba(242,236,255,.045) 75%) 12px 12px / 24px 24px,
+    var(--mq-midnight);
 }
-.ticker-track {
-  display: flex;
-  width: max-content;
-  animation: ticker 32s linear infinite;
-}
-.ticker:hover .ticker-track { animation-play-state: paused; }
-.ticker ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.ticker li {
-  display: flex;
-  align-items: center;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-stretch: 75%;
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.ticker li::after {
+/* ruler along the bottom edge */
+.marquee::after {
   content: "";
-  width: 8px; height: 8px;
-  margin-inline: 1.5rem;
-  background: var(--gold);
-  transform: rotate(45deg);
+  position: absolute; left: 0; right: 0; bottom: 0; height: 22px;
+  background:
+    repeating-linear-gradient(90deg, var(--mq-lavender) 0 1px, transparent 1px 80px) 0 100% / 100% 16px no-repeat,
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--mq-lavender) 70%, transparent) 0 1px, transparent 1px 16px) 0 100% / 100% 8px no-repeat;
+  opacity: .7;
+  pointer-events: none;
 }
-@keyframes ticker { to { transform: translateX(-50%); } }
+/* registration dots */
+.marquee .reg { position: absolute; left: var(--gutter); top: 14px; display: flex; gap: 6px; z-index: 2; }
+.marquee .reg i { display: block; width: 10px; height: 10px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px var(--mq-midnight); }
+
+.mq-toggle {
+  position: absolute; right: var(--gutter); top: 8px; z-index: 2;
+  min-height: 32px; padding: 0.2rem 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--mq-lavender) 45%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--mq-midnight) 85%, transparent);
+  color: var(--mq-lavender);
+  font: inherit; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  cursor: pointer;
+}
+.mq-toggle:hover { border-color: var(--mq-lavender); }
+.mq-toggle:focus-visible { outline: 2px solid var(--mq-orange); outline-offset: 2px; }
+
+.lane { overflow: hidden; }
+.marquee .track { display: flex; width: max-content; align-items: center; }
+.marquee ul { display: flex; align-items: center; flex: none; list-style: none; margin: 0; padding: 0; }
+.marquee li {
+  display: flex; align-items: center; gap: 30px; margin-right: 30px;
+  font-family: var(--font-display); font-weight: 900; font-stretch: 62%; text-transform: uppercase; line-height: 1;
+  font-size: clamp(2.7rem, 9vw, 5.2rem);
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--mq-lavender);
+}
+.marquee li.fill { color: var(--c); -webkit-text-stroke: 0; }
+.marquee li svg { width: 0.5em; height: 0.5em; flex: none; fill: var(--h); }
+
+/* Motion starts once the script has doubled the list for a seamless loop */
+.marquee.is-live .lane-a .track { animation: mq-left 56s linear infinite; }
+.marquee.is-live .lane-b .track { animation: mq-right 70s linear infinite; }
+.marquee.is-live:hover .track, .marquee.is-paused .track { animation-play-state: paused; }
+@keyframes mq-left { to { transform: translateX(-50%); } }
+@keyframes mq-right { from { transform: translateX(-50%); } to { transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .mq-toggle { display: none; }
+  .marquee .track { width: auto; }
+  .marquee ul { flex-wrap: wrap; row-gap: 12px; padding-inline: var(--gutter); }
+  .marquee .track ul[aria-hidden="true"], .marquee .lane-b { display: none; }
+}
 
 /* ---------- Numbered steps (sequential content only) ---------- */
 .steps {
