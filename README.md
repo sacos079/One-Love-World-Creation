@@ -11,7 +11,7 @@ public/                 Everything the site publishes
   start-an-order/       Main order form
   services/             The four service paths (Originals folded in here)
   group-orders/         Crew orders + the same form, preset to group
-  about/                Story, team, values, location
+  gallery/              Photo gallery with category filters
   404.html              Not-found page
   css/tokens.css        Colors, type, spacing
   css/base.css          Reset, typography, cloud background
@@ -19,6 +19,8 @@ public/                 Everything the site publishes
   js/main.js            Mobile menu, ticker loop
   js/order-schema.js    Order form questions -> Airtable fields
   js/order-form.js      Order form UI
+  js/gallery.js         Gallery category filter
+  _redirects            Sends the old /about address to /gallery/
   images/placeholders/  Placeholder assets until real photos exist
 src/worker.js           Worker entry: serves the site, sends /api/order to the function
 functions/api/order.js  Saves orders to Airtable
@@ -40,6 +42,21 @@ The order form can't submit this way. To test the whole thing, run `npx wrangler
 
 The site deploys as the Worker `one-love-world-creation` from this repo with `npx wrangler deploy`
 (build command empty, deploy command `npx wrangler deploy`). Merging to `main` redeploys it.
+
+## Adding gallery photos
+
+The gallery has 12 placeholder tiles in `public/gallery/index.html`. To swap one for a real photo:
+
+1. Put the image in `public/images/gallery/` (JPG or WebP, about 1600px on the long side).
+2. In the tile's `<figure>`, replace the `<div class="ph">...</div>` with:
+
+```html
+<img src="/images/gallery/your-photo.jpg" alt="What the photo shows" loading="lazy">
+<figcaption>Short caption</figcaption>
+```
+
+3. Keep `data-cat` on the `<figure>` as one of `embroidery`, `patches`, `dtf`, `names`, `crews` so the filter works.
+   Add `tall` or `wide` to the figure's class to make a bigger tile.
 
 ## The order form
 
@@ -64,5 +81,5 @@ deployed site or under `npx wrangler dev`, not with `python3 -m http.server`.
 
 ## Before launch
 
-- Swap every `.ph` placeholder block for real photos (hero, add-ons, crew, About/team). The About photos are outlined in amber and marked "Real photo required". Never use stock photos there.
+- Swap every `.ph` placeholder block for real photos (hero, add-ons, crew, gallery). Use real photos of your own work; no stock photos.
 - Set the real Instagram URL in each page footer.
