@@ -13,6 +13,24 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Soft clouds behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(46vmax 28vmax at 12% 6%, rgba(255,255,255,0.95), transparent 70%),
+    radial-gradient(40vmax 26vmax at 90% 24%, rgba(255,255,255,0.8), transparent 70%),
+    radial-gradient(56vmax 32vmax at 28% 80%, rgba(196,180,255,0.38), transparent 70%),
+    radial-gradient(46vmax 28vmax at 94% 94%, rgba(169,210,255,0.4), transparent 70%);
+}
+
+main { overflow-x: clip; }
+
+[hidden] { display: none !important; }
+
 img, svg, iframe { display: block; max-width: 100%; }
 
 h1, h2, h3 {
@@ -30,10 +48,10 @@ h3 { font-size: var(--step-1); font-stretch: 85%; font-weight: 800; line-height:
 
 p { margin: 0; max-width: 62ch; }
 
-a { color: inherit; text-decoration-color: var(--amber-dim); text-underline-offset: 3px; }
-a:hover { color: var(--lavender); text-decoration-color: var(--lavender); }
+a { color: inherit; text-decoration-color: color-mix(in srgb, var(--violet) 55%, var(--bg)); text-underline-offset: 3px; }
+a:hover { color: var(--violet); text-decoration-color: var(--violet); }
 
-:focus-visible { outline: 2px solid var(--lavender); outline-offset: 3px; border-radius: 2px; }
+:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; border-radius: 2px; }
 
 .wrap {
   width: 100%;
@@ -48,7 +66,7 @@ a:hover { color: var(--lavender); text-decoration-color: var(--lavender); }
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--lavender);
+  color: var(--gold-ink);
 }
 
 .lede { font-size: var(--step-1); color: var(--text-muted); line-height: 1.5; }

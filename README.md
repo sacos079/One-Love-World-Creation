@@ -1,47 +1,66 @@
 # One Luv — One Love World Creation
 
 Static website for One Luv, a family-owned custom apparel shop in Miami.
-Plain HTML/CSS/JS, hosted on Cloudflare Pages. Order forms are Tally embeds that write to the Airtable **Orders** table.
+Plain HTML/CSS/JS, hosted as a Cloudflare Worker with static assets. The order form saves to the Airtable **Orders** table through the Worker.
 
 ## Structure
 
 ```
-index.html              Home
-start-an-order/         Main intake form (Tally embed)
-services/               The four service paths (Originals folded in here)
-group-orders/           Crew orders + crew form (Tally embed)
-about/                  Story, team, values, location
-404.html                Not-found page (Cloudflare Pages serves it automatically)
-css/tokens.css          Colors, type, spacing
-css/base.css            Reset + typography
-css/components.css      Nav, buttons, placeholders, ticker, steps, cards, forms, footer
-js/main.js              Mobile menu, ticker loop, Tally embed loader
-images/placeholders/    Placeholder assets until real photos exist
+public/                 Everything the site publishes
+  index.html            Home
+  start-an-order/       Main order form
+  services/             The four service paths (Originals folded in here)
+  group-orders/         Crew orders + the same form, preset to group
+  about/                Story, team, values, location
+  404.html              Not-found page
+  css/tokens.css        Colors, type, spacing
+  css/base.css          Reset, typography, cloud background
+  css/components.css    Nav, buttons, cards, ticker, order form, footer
+  js/main.js            Mobile menu, ticker loop
+  js/order-schema.js    Order form questions -> Airtable fields
+  js/order-form.js      Order form UI
+  images/placeholders/  Placeholder assets until real photos exist
+src/worker.js           Worker entry: serves the site, sends /api/order to the function
+functions/api/order.js  Saves orders to Airtable
+wrangler.jsonc          Cloudflare config (Worker name, assets folder)
 ```
 
 ## Run locally
 
+Design and content changes:
+
 ```
-python3 -m http.server 8000
+cd public && python3 -m http.server 8000
 ```
 
-Then open http://localhost:8000. Links use root paths (`/css/...`), so opening the file directly won't load styles. Use a local server.
+Then open http://localhost:8000. Links use root paths (`/css/...`), so opening a file directly won't load styles.
+The order form can't submit this way. To test the whole thing, run `npx wrangler dev` from the repo root.
 
-## Deploy (Cloudflare Pages)
+## Deploy (Cloudflare Workers)
 
-Connect this repo in Cloudflare Pages. Framework preset: **None**, build command: *(empty)*, output directory: `/`.
+The site deploys as the Worker `one-love-world-creation` from this repo with `npx wrangler deploy`
+(build command empty, deploy command `npx wrangler deploy`). Merging to `main` redeploys it.
 
-## Connecting the order form (Tally → Airtable)
+## The order form
 
-1. Build the "Start Your Order" form in Tally using the fields in the spec (section 5).
-2. In Tally: **Integrations → Airtable**, map each field to the Orders table columns (spec section 8).
-   Add hidden fields for the system columns: `Order Status` = `Inquiry`. Order Date can map to Tally's submission time.
-3. Set the confirmation message: "Got it! We'll review your idea and send you a design preview and quote. Nothing is final until you approve it."
-4. Copy the form ID from its share link (`tally.so/r/<ID>`) and paste it into `data-tally-id=""` in `start-an-order/index.html`.
+`start-an-order/` and `group-orders/` share one 4-step form that saves straight to the Airtable **Orders** table
+(the "One Love World Creation CRM" base). It asks the same questions as the existing Airtable form.
 
-Do the same for the "Plan Your Crew Order" form in `group-orders/index.html`. Point it at the same Orders table and also map Group/Organization Name.
+- `public/js/order-schema.js` holds every question, its choices and the Airtable field it fills. Change questions here.
+  Select choices must match the Orders table's options exactly.
+- `public/js/order-form.js` builds the form in the browser. `data-preset="group"` pre-selects Group / Bulk Order.
+- `functions/api/order.js` handles `POST /api/order` (called from `src/worker.js`). It re-checks every answer,
+  creates the record (Status = Inquiry, Intake Source = Website, Order Date = today) and uploads artwork files.
 
-Until an ID is set, each page shows an outline of the questions instead of the form.
+To turn it on:
+
+1. In Airtable, create a personal access token (airtable.com/create/tokens) with the scope
+   `data.records:write`, limited to the One Love World Creation CRM base.
+2. In Cloudflare → Workers & Pages → `one-love-world-creation` → **Settings → Variables and Secrets**,
+   add a secret named `AIRTABLE_TOKEN` with that token, then deploy again.
+
+Until the token is set, submitting shows "The order form isn't connected yet." The form only works on the
+deployed site or under `npx wrangler dev`, not with `python3 -m http.server`.
 
 ## Before launch
 

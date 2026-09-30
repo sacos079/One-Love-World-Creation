@@ -1,19 +1,24 @@
 /* One Luv design tokens — see spec section 3 */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  /* Color */
-  --bg: #0D0D0F;
-  --surface: #18181B;
-  --surface-raised: #212124;
-  --amber: #E8A33D;
-  --amber-dim: #8A611F;
-  --lavender: #B9A6F5;
-  --teal: #4FD1C5;
-  --text: #F4F1EA;
-  --text-muted: #9C9891;
-  --border: #2C2C30;
-  --on-amber: #1A1206;
+  /* Color — soft cloud lavender base, magnetic purple leads, gold thread as the one warm accent */
+  --bg: #F3F1FB;
+  --surface: #FFFFFF;
+  --surface-raised: #EAE6F8;
+  --purple: #7B3FF2;
+  --violet: #6A3BE4;
+  --sky: #A9D2FF;
+  --gold: #EDB02E;
+  --gold-ink: #94590A;
+  --danger: #C2261F;
+  --text: #1B1433;
+  --text-muted: #5E5679;
+  --border: #DCD6EE;
+  --on-color: #1A1206;
+  --on-purple: #FFFFFF;
+  --magnetic: linear-gradient(120deg, #3A1C9E 0%, var(--purple) 60%, #9B4DF5 100%);
+  --lift: 0 14px 34px -20px rgba(70, 40, 150, 0.45);
 
   /* Type */
   --font-display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
