@@ -1,13 +1,13 @@
-// POST /api/order — Cloudflare Pages Function.
+// POST /api/order — called from src/worker.js.
 // Validates the order form and creates a record in the Airtable Orders table,
 // then uploads any artwork files to that record.
 //
-// Needs one secret in Cloudflare Pages → Settings → Variables and Secrets:
+// Needs one secret on the Worker (Settings → Variables and Secrets):
 //   AIRTABLE_TOKEN  a personal access token with data.records:write on the CRM base.
 
 import {
   AIRTABLE, FIELDS, SYSTEM_FIELDS, MAX_FILES, MAX_FILE_BYTES, checkField, isShown, summarize,
-} from "../../js/order-schema.js";
+} from "../../public/js/order-schema.js";
 
 const json = (body, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { "content-type": "application/json" } });
