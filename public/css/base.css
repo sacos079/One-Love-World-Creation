@@ -13,7 +13,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Soft clouds behind everything */
+/* Faint purple mist behind everything */
 body::before {
   content: "";
   position: fixed;
@@ -21,10 +21,9 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(46vmax 28vmax at 12% 6%, rgba(255,255,255,0.95), transparent 70%),
-    radial-gradient(40vmax 26vmax at 90% 24%, rgba(255,255,255,0.8), transparent 70%),
-    radial-gradient(56vmax 32vmax at 28% 80%, rgba(196,180,255,0.38), transparent 70%),
-    radial-gradient(46vmax 28vmax at 94% 94%, rgba(169,210,255,0.4), transparent 70%);
+    radial-gradient(46vmax 28vmax at 12% 6%, rgba(123,63,242,0.16), transparent 70%),
+    radial-gradient(40vmax 26vmax at 90% 30%, rgba(155,77,245,0.10), transparent 70%),
+    radial-gradient(56vmax 32vmax at 25% 85%, rgba(123,63,242,0.12), transparent 70%);
 }
 
 main { overflow-x: clip; }

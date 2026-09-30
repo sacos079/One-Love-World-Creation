@@ -1,24 +1,24 @@
 /* One Luv design tokens — see spec section 3 */
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
-  /* Color — soft cloud lavender base, magnetic purple leads, gold thread as the one warm accent */
-  --bg: #F3F1FB;
-  --surface: #FFFFFF;
-  --surface-raised: #EAE6F8;
+  /* Color — midnight purple base, magnetic purple leads, gold thread as the one warm accent */
+  --bg: #0B0816;
+  --surface: #141027;
+  --surface-raised: #1E1838;
   --purple: #7B3FF2;
-  --violet: #6A3BE4;
-  --sky: #A9D2FF;
-  --gold: #EDB02E;
-  --gold-ink: #94590A;
-  --danger: #C2261F;
-  --text: #1B1433;
-  --text-muted: #5E5679;
-  --border: #DCD6EE;
+  --violet: #B79CFF;
+  --sky: #7B3FF2;
+  --gold: #F2C14E;
+  --gold-ink: #F2C14E;
+  --danger: #FF8A80;
+  --text: #FBF8FF;
+  --text-muted: #A9A1C2;
+  --border: #2A2347;
   --on-color: #1A1206;
   --on-purple: #FFFFFF;
-  --magnetic: linear-gradient(120deg, #3A1C9E 0%, var(--purple) 60%, #9B4DF5 100%);
-  --lift: 0 14px 34px -20px rgba(70, 40, 150, 0.45);
+  --magnetic: linear-gradient(120deg, #24105F 0%, var(--purple) 60%, #9B4DF5 100%);
+  --lift: 0 14px 34px -20px rgba(0, 0, 0, 0.7);
 
   /* Type */
   --font-display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
