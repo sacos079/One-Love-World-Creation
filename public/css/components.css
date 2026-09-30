@@ -287,6 +287,9 @@
 .addon h3 { font-size: var(--step-2); text-transform: uppercase; font-stretch: 70%; font-weight: 900; }
 .addon p { color: var(--text-muted); }
 @media (min-width: 600px) { .addon-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 600px) { .addon.featured { grid-column: span 2; } .addon.featured .ph { aspect-ratio: 2 / 1; } }
+.addon.featured h3 { font-size: var(--step-3); color: var(--violet); }
+.addon.featured p { max-width: 46ch; font-size: var(--step-1); line-height: 1.45; color: var(--text); }
 @media (min-width: 1000px) { .addon-grid { grid-template-columns: repeat(4, 1fr); } }
 
 /* ---------- Group teaser ---------- */
